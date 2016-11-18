@@ -1,15 +1,52 @@
-<h1>My cocktails:</h1>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 10%), url('https://images.unsplash.com/photo-1473949103155-d89f3aa93cf1?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=');">
+  <div class="banner-content">
+    <h1>Mind Blowing Cocktail Ideas</h1>
+    <p>Don't go for a ride after drinking, you'd be an asshole</p>
+    <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary" %>
+  </div>
+</div>
 
-<table>
-  <tbody>
+
+  <div class="separator">
+    <h2>My Cocktails</h2>
+  </div>
+
+
+<div class="container">
+  <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <tr>
-        <td><h4><%= cocktail.name %></h4></td>
-        <td><%= link_to "See details", cocktail_path(cocktail) %></td>
-      </tr>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+          <div class="card-description">
+            <h2><%= cocktail.name %></h2>
+          </div>
+          <%= link_to "", cocktail_path(cocktail), { :class=>"card-link" } %>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-<div class="container"></div>
-<%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
+<footer class="footer-distributed">
+
+  <div class="footer-right">
+
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <a href="#"><i class="fa fa-github"></i></a>
+
+  </div>
+
+  <div class="footer-left">
+
+    <p class="footer-links">
+      This page is a two days project coded during my studies at Le Wagon Paris
+    </p>
+
+    <p>© Grozef 2016</p>
+  </div>
+
+  </footer>
+
 

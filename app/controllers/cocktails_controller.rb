@@ -14,14 +14,8 @@ class CocktailsController < ApplicationController
   def create
     @cocktail = Cocktail.new(cocktail_params)
     @cocktail.save
-    redirect_to cocktails_path
+    redirect_to cocktail_path(@cocktail)
   end
-
-  def destroy
-   @dose = Dose.find(params[:cocktail_id])
-   @dose.delete
-   redirect_to cocktail_path
- end
 
   private
 
